@@ -18,10 +18,12 @@ const images = [
 ];
 const parent = document.querySelector("#gallery");
 
-const children = images.map(
-  (e) =>
-    `<li><img  src="${e.url} " width="1500" height="900" alt="${e.alt}" ></img> </li>`
-);
+const children = images
+  .map(
+    (e) =>
+      `<li><img  src="${e.url} " width="1500" height="900" alt="${e.alt}" ></img> </li>`
+  )
+  .join("");
 parent.insertAdjacentHTML("afterbegin", children);
 
 // parent.insertAdjacentElement("afterbegin", children);

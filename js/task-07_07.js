@@ -18,3 +18,5 @@ const rangeText = (e) => {
 // слушатель событий подключает действия через
 // обратную функцию rangeText
 inputRange.addEventListener("input", rangeText);
+console.dir(spanText);
+//https://css-tricks.com/debouncing-throttling-explained-examples/

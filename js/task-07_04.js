@@ -22,12 +22,12 @@ const buttonDecrement = document.querySelector(
 //  которой будет хранится текущее
 // значение счетчика.
 const value = document.querySelector("#value");
-let counterValue = Number(value.textContent);
+let counter;
 // Создаем функцию increment и
 //  для увеличения  значения счетчика
 const increment = () => {
-  counterValue = counterValue + 1;
-  value.textContent = counterValue;
+  counter = value + 1;
+  value.textContent = counter;
 };
 // Добавляем слушатели кликов на кнопки,
 // вызовы функций и обновление
@@ -36,14 +36,40 @@ buttonIncrement.addEventListener("click", increment);
 // Создаем функцию decrement для
 //  уменьшения значения счетчика
 const decrement = () => {
-  if (counterValue > 0) {
-    counterValue = counterValue - 1;
+  if (counter > 0) {
+    counter = value - 1;
   } else {
-    counterValue = 0;
+    counter = 0;
   }
-  value.textContent = counterValue;
+  value.textContent = counter;
 };
 // Добавляем слушатели кликов на кнопки,
 // вызовы функций и обновление
 // интерфейса
 buttonDecrement.addEventListener("click", decrement);
+// ============================
+// 'use strict';
+
+// const refs = {
+//   counter: document.querySelector("#counter"),
+//   value: document.querySelector("#value"),
+// };
+
+// const actions = {
+//   state: {
+//     value: 0,
+//   },
+//   decrement() {
+//     this.state.value -= 1;
+//   },
+//   increment() {
+//     this.state.value += 1;
+//   },
+// };
+
+// const changeValue = ({ target }) => {
+//   actions[target.dataset.action]();
+//   refs.value.textContent = actions.state.value;
+// };
+
+// refs.counter.addEventListener("click", changeValue);
